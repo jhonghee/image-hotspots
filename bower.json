@@ -12,8 +12,8 @@
     "test"
   ],
   "dependencies": {
-    "jquery": "~1.5.2",
-    "jquery-ui": "~1.8.23",
+    "jquery": "~1.10.1",
+    "jquery-ui": "~1.10.3",
     "qunit": "~1.11.0"
   },
   "main": "src/image-hotspots.js"
