@@ -2,9 +2,6 @@
 
 	$.fn.hotspots = function( options ) {
 
-		var cssHidden = {'visibility':'hidden'};
-		var cssVisible = {'visibility':'visible'};
-
 		return this.each(function(idx, elm){
 			var $elm = $(elm);
 			var $img = $elm.find('img');
@@ -38,7 +35,7 @@
 					else {
 						$localHS.css({'z-index': baseZIndex+10});
 					}
-					$localWrapper.toggle('blind');
+					$localWrapper.toggle('blind', 200);
 				});
 			});			
 			$hotspotBlock.remove();
