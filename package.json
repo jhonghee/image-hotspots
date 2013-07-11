@@ -1,0 +1,35 @@
+{
+  "name": "image-hotspots",
+  "version": "0.0.1",
+  "description": "jQuery - image hotspots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nakalsio/image-hotspots.git"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-ui",
+    "image",
+    "hotspot"
+  ],
+  "author": "Jhonghee Park",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "4bc8ad628c9b80c1da416e657742b13c3c4550f4",
+  "dependencies": {
+    "express": "3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-qunit": "~0.2.1",
+    "matchdep": "~0.1.2"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "image-hotspots",
+  "description": "jQuery - image hotspots",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "*.js",
+    "*.css",
+    "index.html",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "~1.10.1",
+    "jquery-ui": "~1.10.3",
+    "qunit": "~1.11.0"
+  },
+  "main": "src/image-hotspots.js"
+}
