@@ -26,14 +26,20 @@
 				});
 				var $wrapper = $hotspot.find('.img-hotspot-wrapper');
 				$wrapper.hide();
-				$hotspot.find('.img-hotspot-button').on('click', function(){
+				$hotspot.on('click', '.img-hotspot-button', function(){
+					var highestZIndex = baseZIndex+10;
+					$elm.find('.img-hotspot-container').each(function(cIdx, cElm){
+						if( $(cElm).css('z-index') > highestZIndex ) {
+							highestZIndex = $(cElm).css('z-index') + 1;
+						}
+					});
 					var $localHS = $(this).parent();
 					var $localWrapper = $localHS.find('.img-hotspot-wrapper');
 					if( $localWrapper.is(':visible') ) {						
 						$localHS.css({'z-index': baseZIndex+1});
 					}
 					else {
-						$localHS.css({'z-index': baseZIndex+10});
+						$localHS.css({'z-index': highestZIndex+1});
 					}
 					$localWrapper.toggle('blind', 200);
 				});
