@@ -29,3 +29,22 @@ This plug-in will turn following HTML into image hotspots.
 ```js
 $('.image-hotspots').hotspots();
 ```
+
+## How to style hotspots
+
+The generated DOM for a hotspot would look like this.
+
+```
+	<div class="img-hotspot-container" style="height: 1px; z-index: 1; position: relative; top: 30px; left: 30px;">
+		<div class="img-hotspot-wrapper">
+			<div class="img-hotspot-button closed"></div>
+			<div class="img-hotspot-title" style="display: none;">Blackberry</div>
+			<div class="img-hotspot-desc" style="display: none;">BlackberryLorem ipsum Velit sed amet qui.</div>
+		</div>
+	</div>
+```
+
+ - The button will have class `img-hotspot-button` and `closed` or `opened` based on the state of the hotspot.
+ - The title will have class `img-hotspot-title`
+ - The description will have class `img-hotspot-desc`
+ - The wrapper will have class `img-hotspot-wrapper` so that you can apply overall background color and border.
