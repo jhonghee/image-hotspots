@@ -14,24 +14,31 @@
 			var $hotspotLIs = $elm.find('ul li');
 			$hotspotBlock.hide();
 			$hotspotLIs.each(function(hsIdx, hsElm){
+				var targetWidth, targetHeight;
 				var $hsElm = $(hsElm);
 				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy');
 				var title = $hsElm.find('label').text();
 				var desc = $hsElm.text();
 				var $hotspot = $("<div class='img-hotspot-container'><div class='img-hotspot-wrapper'><div class='img-hotspot-button closed'></div><div class='img-hotspot-title'>"+title+"</div><div class='img-hotspot-desc'>"+desc+"</div></div></div>");				
-				$elm.append($hotspot);				
+				$elm.append($hotspot);
+
 				$hotspot.css({'height': '1px', 'z-index': baseZIndex});
 				$hotspot.position({
 					of: $img,
 					my: 'left top',
-					at: 'left+'+posx+' top+'+posy,
+					at: 'left top',
 					collision: 'flip flip'
 				});
+				$hotspot.css({'top':posy+'px','left':posx+'px','position':'relative'});
 				var $title = $hotspot.find('.img-hotspot-title');
+				targetWidth = $title.css('width');		
+				$title.css({'width':'0px'});
 				$title.hide();
 				var $desc = $hotspot.find('.img-hotspot-desc');
+				targetHeight = $desc.css('height');
+				$desc.css({'height':'0px'});
 				$desc.hide();
-				$hotspot.on('click', '.img-hotspot-button', function(){
+				$hotspot.find('.img-hotspot-button').click(function(){
 					$elm.find('.img-hotspot-container').each(function(cIdx, cElm){
 						$(cElm).css({'z-index': baseZIndex});
 					});
@@ -41,16 +48,22 @@
 					var $ldesc = $localHS.find('.img-hotspot-desc');
 					if( $ltitle.is(':visible') ) {						
 						$localHS.css({'z-index': baseZIndex});
-						$desc.hide('blind', 400, function(){
-							$ltitle.hide('blind', { direction: 'left'}, 400);
-						});
+						$desc.animate({height:'0px'},{duration:400, complete:function(){
+							$desc.css({'display':'none'});
+							$ltitle.animate({width:'0px'},{duration:400, complete:function(){
+								$ltitle.css({'display':'none'});
+
+							}});
+						}});						
 						$lbutton.removeClass(openedClass).addClass(closedClass);
 					}
 					else {
 						$localHS.css({'z-index': baseZIndex + 100});
-						$ltitle.show('blind', { direction: 'left'}, 400, function(){
-							$ldesc.show('blind', 400);
-						});
+						$ltitle.css({'display':'block'});
+						$ltitle.animate({width: targetWidth},{duration:400, complete:function(){							
+							$ldesc.css({'display':'block'});
+							$ldesc.animate({height: targetHeight},{duration:400});
+						}});
 						$lbutton.removeClass(closedClass).addClass(openedClass);
 					}
 				});
