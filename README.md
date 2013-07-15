@@ -37,7 +37,7 @@ The generated DOM for a hotspot would look like this.
 ```
 	<div class="img-hotspot-container" style="height: 1px; z-index: 1; position: relative; top: 30px; left: 30px;">
 		<div class="img-hotspot-wrapper">
-			<div class="img-hotspot-button closed"></div>
+			<div class="img-hotspot-button"><div class="closed"></div></div>
 			<div class="img-hotspot-title" style="display: none;">Blackberry</div>
 			<div class="img-hotspot-desc" style="display: none;">BlackberryLorem ipsum Velit sed amet qui.</div>
 		</div>
