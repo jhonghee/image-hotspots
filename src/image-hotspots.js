@@ -19,7 +19,7 @@
 				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy');
 				var title = $hsElm.find('label').text();
 				var desc = $hsElm.text();
-				var $hotspot = $("<div class='img-hotspot-container'><div class='img-hotspot-wrapper'><div class='img-hotspot-button closed'></div><div class='img-hotspot-title'>"+title+"</div><div class='img-hotspot-desc'>"+desc+"</div></div></div>");				
+				var $hotspot = $("<div class='img-hotspot-container'><div class='img-hotspot-wrapper'><div class='img-hotspot-button'><div class='closed'></div></div><div class='img-hotspot-title'>"+title+"</div><div class='img-hotspot-desc'>"+desc+"</div></div></div>");				
 				$elm.append($hotspot);
 
 				$hotspot.css({'height': '1px', 'z-index': baseZIndex});
@@ -43,7 +43,7 @@
 						$(cElm).css({'z-index': baseZIndex});
 					});
 					var $localHS = $(this).parent().parent();
-					var $lbutton = $localHS.find('.img-hotspot-button');
+					var $lbutton = $localHS.find('.img-hotspot-button div');
 					var $ltitle = $localHS.find('.img-hotspot-title');
 					var $ldesc = $localHS.find('.img-hotspot-desc');
 					if( $ltitle.is(':visible') ) {						
