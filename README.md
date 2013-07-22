@@ -21,6 +21,8 @@ This plug-in will turn following HTML into image hotspots.
  - `img` tag can be used to set up your image
  - Each hotspot can be expressed within `li`
  	- Use `posx` and `posy` attributes on `li` to provide XY-coordinate from the top left corner of the image
+ 		- For right expansion, top/left corner of the hotspot will be used for placement.
+ 		- For left expansion, top/right corner of the hotspot will be used for placement.
  	- Use `label` inside `li` to provide title of the hotspot
  	- The text of `li` becomes the description of the hotspot
  	- (Optional) Use `width` attribute to specify the with of the title. The defult is the width of the title.

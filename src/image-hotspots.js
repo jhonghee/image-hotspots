@@ -23,10 +23,15 @@
                 
 				var targetWidth, targetHeight;
 				var $hsElm = $(hsElm);
-				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy'), width = $hsElm.attr('width'), direction = $hsElm.attr('direction');
+				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy'), width = $hsElm.attr('width');
 
+				var direction = 'right';
 				if( posx > ($img.width() / 2) ) {
 					direction = 'left';
+				}
+				var directionOverride = $hsElm.attr('direction');
+				if( directionOverride ) {
+					direction = directionOverride;
 				}
 
 				var title = $hsElm.find('label').text();
