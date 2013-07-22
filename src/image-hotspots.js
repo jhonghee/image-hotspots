@@ -1,7 +1,7 @@
 (function($, undefined){
 
-	var rhst = '<div class="img-hotspot-container" style="width:1px;"><table><tr><td class="img-hotspot-button"><div class="closed"></div></td><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
-	var lhst = '<div class="img-hotspot-container" style="width:1px;"><table style="float:right;"><tr><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td><td class="img-hotspot-button"><div class="closed"></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
+	var rhst = '<div class="img-hotspot-container" style="width:1px; display:inline-block;"><table><tr><td class="img-hotspot-button"><div class="closed"></div></td><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
+	var lhst = '<div class="img-hotspot-container" style="width:1px; display:inline-block;"><table style="float:right;"><tr><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td><td class="img-hotspot-button"><div class="closed"></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
 
 	$.fn.hotspots = function( options ) {
 
