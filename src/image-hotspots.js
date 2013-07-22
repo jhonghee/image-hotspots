@@ -1,5 +1,8 @@
 (function($, undefined){
 
+	var rhst = '<div class="img-hotspot-container" style="width:1px;"><table><tr><td class="img-hotspot-button"><div class="closed"></div></td><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
+	var lhst = '<div class="img-hotspot-container" style="width:1px;"><table style="float:right;"><tr><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td><td class="img-hotspot-button"><div class="closed"></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
+
 	$.fn.hotspots = function( options ) {
 
 		var closedClass = 'closed';
@@ -20,20 +23,29 @@
                 
 				var targetWidth, targetHeight;
 				var $hsElm = $(hsElm);
-				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy');
+				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy'), width = $hsElm.attr('width'), direction = $hsElm.attr('direction');
+
+				if( posx > ($img.width() / 2) ) {
+					direction = 'left';
+				}
+
 				var title = $hsElm.find('label').text();
 				var desc = $hsElm.text();
-				var $hotspot = $("<div class='img-hotspot-container'><div class='img-hotspot-wrapper'><div class='img-hotspot-button'><div class='closed'></div></div><div class='img-hotspot-title'>"+title+"</div><div class='img-hotspot-desc'>"+desc+"</div></div></div>");				
+				var hotspotTemplate = (direction == 'left') ? lhst : rhst ;
+				var floatDirection = (direction == 'left') ? 'right' : 'left';
+				var $hotspot = $(hotspotTemplate.replace('{{title}}', title).replace('{{desc}}', desc).replace('{{width}}', width));
 				$elm.append($hotspot);
 
 				$hotspot.css({'height': '1px', 'z-index': baseZIndex});
+
 				$hotspot.position({
 					of: $img,
-					my: 'left top',
+					my: floatDirection + ' top',
 					at: 'left top',
 					collision: 'flip flip'
 				});
 				$hotspot.css({'top':posy+'px','left':posx+'px','position':'relative'});
+
 				var $title = $hotspot.find('.img-hotspot-title');
 				targetWidth = $title.css('width');		
 				$title.css({'width':'0px'});
