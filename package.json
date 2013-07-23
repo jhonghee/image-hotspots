@@ -1,6 +1,6 @@
 {
   "name": "image-hotspots",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "jQuery - image hotspots",
   "main": "index.js",
   "scripts": {

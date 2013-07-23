@@ -26,7 +26,7 @@
 				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy'), width = $hsElm.attr('width');
 
 				var direction = 'right';
-				if( posx > ($img.width() / 2) ) {
+				if( posx > ($elm.width() / 2) ) {
 					direction = 'left';
 				}
 				var directionOverride = $hsElm.attr('direction');

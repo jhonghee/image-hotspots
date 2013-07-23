@@ -40,7 +40,7 @@ The generated DOM for a hotspot would look as follows.
 For right expansion,
 
 ```
-	<div class="img-hotspot-container" style="width: 1px; height: 1px; z-index: 1; position: relative; top: 30px; left: 30px;">
+	<div class="img-hotspot-container" style="width: 1px; display: inline-block; height: 1px; z-index: 1; position: relative; top: 30px; left: 30px;">
 		<table>
 			<tbody style="z-index: 101;">
 				<tr>
@@ -64,7 +64,7 @@ For right expansion,
 For left expansion,
 
 ```
-	<div style="width: 1px; height: 1px; z-index: 1; position: relative; top: 100px; left: 300px;" class="img-hotspot-container">
+	<div style="width: 1px; display: inline-block; height: 1px; z-index: 1; position: relative; top: 100px; left: 300px;" class="img-hotspot-container">
 		<table style="float:right;">
 			<tbody style="z-index: 1;">
 				<tr>
