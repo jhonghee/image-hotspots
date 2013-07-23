@@ -1,7 +1,7 @@
 (function($, undefined){
 
-	var rhst = '<div class="img-hotspot-container" style="width:1px; display:inline-block;"><table><tr><td class="img-hotspot-button"><div class="closed"></div></td><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
-	var lhst = '<div class="img-hotspot-container" style="width:1px; display:inline-block;"><table style="float:right;"><tr><td><div class="img-hotspot-title" style="width: {{width}}px;">{{title}}</div></td><td class="img-hotspot-button"><div class="closed"></td></tr><tr class="img-hotspot-desc-body"><td colspan="2"><div class="img-hotspot-desc">{{desc}}</div></td></tr></table></div>';
+	var rhst = '<div class="img-hotspot-container {{direction}}" style="width:1px; display:inline-block;"><table><tr><td class="img-hotspot-button {{direction}}"><div class="closed"></div></td><td><div class="img-hotspot-title {{direction}}" style="width: {{width}}px;">{{title}}</div></td></tr><tr class="img-hotspot-desc-body {{direction}}"><td colspan="2"><div class="img-hotspot-desc {{direction}}">{{desc}}</div></td></tr></table></div>';
+	var lhst = '<div class="img-hotspot-container {{direction}}" style="width:1px; display:inline-block;"><table style="float:right;"><tr><td><div class="img-hotspot-title {{direction}}" style="width: {{width}}px;">{{title}}</div></td><td class="img-hotspot-button {{direction}}"><div class="closed"></td></tr><tr class="img-hotspot-desc-body {{direction}}"><td colspan="2"><div class="img-hotspot-desc {{direction}}">{{desc}}</div></td></tr></table></div>';
 
 	$.fn.hotspots = function( options ) {
 
@@ -38,7 +38,7 @@
 				var desc = $hsElm.text();
 				var hotspotTemplate = (direction == 'left') ? lhst : rhst ;
 				var floatDirection = (direction == 'left') ? 'right' : 'left';
-				var $hotspot = $(hotspotTemplate.replace('{{title}}', title).replace('{{desc}}', desc).replace('{{width}}', width));
+				var $hotspot = $(hotspotTemplate.replace('{{title}}', title).replace('{{desc}}', desc).replace('{{width}}', width).replace(/{{direction}}/g, direction));
 				$elm.append($hotspot);
 
 				$hotspot.css({'height': '1px', 'z-index': baseZIndex});

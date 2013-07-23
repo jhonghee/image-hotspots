@@ -40,20 +40,20 @@ The generated DOM for a hotspot would look as follows.
 For right expansion,
 
 ```
-	<div class="img-hotspot-container" style="width: 1px; display: inline-block; height: 1px; z-index: 1; position: relative; top: 30px; left: 30px;">
+	<div class="img-hotspot-container right" style="width: 1px; display: inline-block; height: 1px; z-index: 1; position: relative; top: 30px; left: 30px;">
 		<table>
-			<tbody style="z-index: 101;">
+			<tbody>
 				<tr>
-					<td class="img-hotspot-button">
-						<div class="opened"></div>
+					<td class="img-hotspot-button right">
+						<div class="closed"></div>
 					</td>
 					<td>
-						<div class="img-hotspot-title" style="width: 88px; display: block;">Blackberry</div>
+						<div class="img-hotspot-title right" style="width: 0px; display: none;">Blackberry</div>
 					</td>
 				</tr>
-				<tr class="img-hotspot-desc-body">
+				<tr class="img-hotspot-desc-body right">
 					<td colspan="2">
-						<div style="height: 60px; display: block;" class="img-hotspot-desc">BlackberryLorem ipsum Velit sed amet qui.</div>
+						<div class="img-hotspot-desc right" style="height: 0px; display: none;">BlackberryLorem ipsum Velit sed amet qui.</div>
 					</td>
 				</tr>
 			</tbody>
@@ -64,20 +64,20 @@ For right expansion,
 For left expansion,
 
 ```
-	<div style="width: 1px; display: inline-block; height: 1px; z-index: 1; position: relative; top: 100px; left: 300px;" class="img-hotspot-container">
+	<div class="img-hotspot-container left" style="width: 1px; display: inline-block; height: 1px; z-index: 1; position: relative; top: 100px; left: 300px;">
 		<table style="float:right;">
-			<tbody style="z-index: 1;">
+			<tbody style="z-index: 101;">
 				<tr>
 					<td>
-						<div style="width: 0px; display: none;" class="img-hotspot-title">Blueberry</div>
+						<div class="img-hotspot-title left" style="width: 73px; display: block;">Blueberry</div>
 					</td>
-					<td class="img-hotspot-button">
-						<div class="closed"></div>
+					<td class="img-hotspot-button left">
+						<div class="opened"></div>
 					</td>
 				</tr>
-				<tr class="img-hotspot-desc-body">
+				<tr class="img-hotspot-desc-body left">
 					<td colspan="2">
-						<div class="img-hotspot-desc" style="height: 80px; display: none;">BlueberryLorem ipsum Dolore velit sint in sunt tempor.</div>
+						<div class="img-hotspot-desc left" style="height: 80px; display: block;">BlueberryLorem ipsum Dolore velit sint in sunt tempor.</div>
 					</td>
 				</tr>
 			</tbody>
