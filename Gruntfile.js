@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+	grunt.loadNpmTasks('grunt-bump');
 
 	// Project Configuration
 	grunt.initConfig({
@@ -40,7 +41,22 @@ module.exports = function(grunt) {
 					base: '.'
 				}
 			}
-		}
+		},
+		bump: {
+			options: {
+				files: ['package.json', 'bower.json'],
+				updateConfigs: [],
+				commit: true,
+				commitMessage: 'Release %VERSION%',
+				commitFiles: ['package.json', 'bower.json'], // '-a' for all files
+				createTag: true,
+				tagName: '%VERSION%',
+				tagMessage: 'Version %VERSION%',
+				push: true,
+				pushTo: 'upstream',
+				gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d' // options to use with '$ git describe'
+			}
+		}		
 	});
 
 	// Default task(s).

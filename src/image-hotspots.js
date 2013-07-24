@@ -63,7 +63,7 @@
 					$elm.find('.img-hotspot-container').each(function(cIdx, cElm){
 						$(cElm).css({'z-index': baseZIndex});
 					});
-					var $localHS = $(this).parent().parent();
+					var $localHS = $(this).parent().parent().parent().parent('.img-hotspot-container');
 					var $lbutton = $localHS.find('.img-hotspot-button div');
 					var $ltitle = $localHS.find('.img-hotspot-title');
 					var $ldesc = $localHS.find('.img-hotspot-desc');
