@@ -26,6 +26,7 @@ This plug-in will turn following HTML into image hotspots.
  	- Use `label` inside `li` to provide title of the hotspot
  	- The text of `li` becomes the description of the hotspot
  	- (Optional) Use `width` attribute to specify the with of the title. The defult is the width of the title.
+ 	- (Optional) Use `height` attribute to specify the height of the description. The default is the height of the description.
  	- (Optional) Use `direction` attribute to specify the direction of expansion. The default behavior is `right` if the `posx` value belongs to the left half of the image, `left` if `posx` value exceeds the half of the image width.
 
 ## How to use in your code

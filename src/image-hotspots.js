@@ -23,7 +23,7 @@
                 
 				var targetWidth, targetHeight;
 				var $hsElm = $(hsElm);
-				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy'), width = $hsElm.attr('width');
+				var posx = $hsElm.attr('posx'), posy = $hsElm.attr('posy'), width = $hsElm.attr('width'), height = $hsElm.attr('height');
 
 				var direction = 'right';
 				if( posx > ($elm.width() / 2) ) {
@@ -57,6 +57,10 @@
 				$title.hide();
 				var $desc = $hotspot.find('.img-hotspot-desc');
 				targetHeight = $desc.css('height');
+				if( height ) {
+					targetHeight = height;
+				}
+
 				$desc.css({'height':'0px'});
 				$desc.hide();
 				$hotspot.find('.img-hotspot-button').click(function(){
@@ -70,9 +74,9 @@
 					if( $ltitle.is(':visible') ) {
                         
 						$localHS.css({'z-index': baseZIndex});
-						$desc.animate({height:'0px'},{duration:400, complete:function(){
+						$desc.animate({'height':'0px'},{duration:400, complete:function(){
 							$ldesc.css({'display':'none'});
-							$ltitle.animate({width:'0px'},{duration:400, complete:function(){
+							$ltitle.animate({'width':'0px'},{duration:400, complete:function(){
 								$ltitle.css({'display':'none'});
 
 							}});
@@ -89,9 +93,9 @@
                             var $pdesc = $openedHS.find('.img-hotspot-desc');
                             
                             $openedHS.css({'z-index': baseZIndex});
-                            $desc.animate({height:'0px'},{duration:400, complete:function(){
+                            $desc.animate({'height':'0px'},{duration:400, complete:function(){
                                 $pdesc.css({'display':'none'});
-                                $ptitle.animate({width:'0px'},{duration:400, complete:function(){
+                                $ptitle.animate({'width':'0px'},{duration:400, complete:function(){
                                     $ptitle.css({'display':'none'});
     
                                 }});
@@ -101,9 +105,9 @@
                                                 
 						$localHS.css({'z-index': baseZIndex + 100});
 						$ltitle.css({'display':'block'});
-						$ltitle.animate({width: targetWidth},{duration:400, complete:function(){							
+						$ltitle.animate({'width': targetWidth},{duration:400, complete:function(){							
 							$ldesc.css({'display':'block'});
-							$ldesc.animate({height: targetHeight},{duration:400});
+							$ldesc.animate({'height': targetHeight},{duration:400});
 						}});
 						$lbutton.removeClass(closedClass).addClass(openedClass);
                         
