@@ -1,10 +1,13 @@
 module.exports = function(grunt) {
 
+	var semver = require('semver');
+
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 	grunt.loadNpmTasks('grunt-bump');
 
 	// Project Configuration
 	grunt.initConfig({
+		semver: semver,
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
 			all: ['Gruntfile.js', 'src/**/*.js', 'lib/**/*.js', 'test/**/*.js']
@@ -12,7 +15,7 @@ module.exports = function(grunt) {
 		uglify: {
 			options: {
 				mangle: true,
-				banner: '/*! <%= pkg.name %> <%= pkg.version %> - ' + 
+				banner: '/*! <%= pkg.name %> <%= semver.inc(pkg.version, "patch") %> - ' + 
 					'<%= grunt.template.today("yyyy-mm-dd") %> */'
 			},
 			build: {

@@ -35,7 +35,7 @@
 				}
 
 				var title = $hsElm.find('label').text();
-				var desc = $hsElm.text();
+				var desc = $($hsElm.contents()[1]).text();
 				var hotspotTemplate = (direction == 'left') ? lhst : rhst ;
 				var floatDirection = (direction == 'left') ? 'right' : 'left';
 				var $hotspot = $(hotspotTemplate.replace('{{title}}', title).replace('{{desc}}', desc).replace('{{width}}', width).replace(/{{direction}}/g, direction));
